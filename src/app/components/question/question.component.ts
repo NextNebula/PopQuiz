@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Select } from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { GameState } from '../../game.state';
+import { GameState } from '../../store/game.state';
 import { Question } from '../../models/question';
+import { GetNewQuestion } from 'src/app/store/game.actions';
 
 @Component({
   selector: 'app-question',
@@ -12,9 +13,9 @@ import { Question } from '../../models/question';
 export class QuestionComponent implements OnInit {
   @Select(GameState.getQuestion) question$: Observable<Question>;
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
+    this.store.dispatch(new GetNewQuestion());
   }
-
 }
