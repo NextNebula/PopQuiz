@@ -1,0 +1,14 @@
+//Colors
+$color-light: #fff;
+$color-dark: #000;
+$color-main: #6a4c93;
+
+@mixin theme-dark {
+    background-color: $color-main;
+    color: $color-light;
+}
+
+@mixin theme-light {
+    background-color: $color-light;
+    color: $color-dark;
+}
