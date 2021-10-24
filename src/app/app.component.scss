@@ -1,4 +1,7 @@
+@import "../theme.scss";
+
 main {
     max-width: 800px;
-    margin: 40px auto;
+    margin: $spacing-xl auto $spacing-l auto;
+    padding: 0 $spacing-l;
 }

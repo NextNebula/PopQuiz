@@ -6,6 +6,17 @@ $color-choose: #F59E0B;
 $color-correct: #10B981;
 $color-wrong: #EF4444;
 
+//Spacing
+$spacing-s: 5px;
+$spacing-m: 10px;
+$spacing-l: 20px;
+$spacing-xl: 40px;
+$spacing-xxl: 80px;
+
+//Others
+$border-radius: 5px;
+
+//Theme mixins
 @mixin theme-dark {
     background-color: $color-main;
     color: $color-light;
@@ -15,3 +26,21 @@ $color-wrong: #EF4444;
     background-color: $color-light;
     color: $color-dark;
 }
+
+//Breakpoint mixins
+$breakpoints: (
+  'desktop': 800px,
+) !default;
+
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+   
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+  }

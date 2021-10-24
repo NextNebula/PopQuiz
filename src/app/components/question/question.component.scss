@@ -1,5 +1,12 @@
+@import "../../../theme.scss"; 
+
 h1 {
     width: 100%;
-    font-size: 36px;
+    font-size: 28px;
     text-align: center;
+    margin: 0 0 $spacing-xl 0;
+
+    @include respond-to('desktop') {
+        font-size: 36px;
+    }
 }

@@ -2,14 +2,18 @@
 
 .container {
     @include theme-light;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 28px;
+    margin-bottom: $spacing-l;
+    padding: $spacing-m;
+    font-size: 24px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: $border-radius;
     transition: background-color 0.3s ease;
     transition: color 0.2s ease;
     cursor: pointer;
+
+    @include respond-to('desktop') {
+        font-size: 28px;
+    }
 
     &:hover {
         background-color: $color-choose;
