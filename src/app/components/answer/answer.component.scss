@@ -7,4 +7,21 @@
     font-size: 28px;
     text-align: center;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
+    transition: color 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-choose;
+    }
+}
+
+.correct, .correct:hover {
+    background-color: $color-correct;
+    color: $color-light;
+}
+
+.wrong, .wrong:hover {
+    background-color: $color-wrong;
+    color: $color-light;
 }

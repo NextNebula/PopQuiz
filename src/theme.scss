@@ -1,7 +1,10 @@
 //Colors
-$color-light: #fff;
+$color-light: #FFF;
 $color-dark: #000;
-$color-main: #6a4c93;
+$color-main: #7C3AED;
+$color-choose: #F59E0B;
+$color-correct: #10B981;
+$color-wrong: #EF4444;
 
 @mixin theme-dark {
     background-color: $color-main;

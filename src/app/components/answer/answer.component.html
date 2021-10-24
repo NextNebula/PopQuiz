@@ -1,1 +1,1 @@
-<div class="container">{{answer}}</div>
+<div class="container" [class.correct]="isAnsweredCorrect" [class.wrong]="isAnsweredWrong" (click)="onClick(answer.isCorrent)">{{answer.answer}}</div>

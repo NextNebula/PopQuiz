@@ -29,11 +29,12 @@ export class GameState {
       return this.questionService.getQuestion().pipe(tap((result) => {
           const state = getState();
 
-          const incorrectAnswers = shuffleArray(result[0].incorrectAnswers).slice(0, 3);
+          const apiQuestion = result[0];
+          const incorrectAnswers = shuffleArray(apiQuestion.incorrectAnswers).slice(0, 3);
 
           const question: Question = {
-            question: result[0].question,
-            answers: shuffleArray([result[0].correctAnswer, ...incorrectAnswers])
+            question: apiQuestion.question,
+            answers: shuffleArray([{ answer: apiQuestion.correctAnswer, isCorrent: true }, ...incorrectAnswers.map(_ => { return { answer: _, isCorrent: false} })]),
           }
 
           setState({

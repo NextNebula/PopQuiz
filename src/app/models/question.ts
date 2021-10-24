@@ -1,4 +1,6 @@
+import { Answer } from "./answer";
+
 export interface Question {
     question: string;
-    answers: string[];
+    answers: Answer[];
 }
