@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { State, Selector, Action, StateContext } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
-import { shuffleArray } from '../helpers/arrayHelpers';
 
 import { Question } from '../models/question';
 import { QuestionService } from '../services/question.service';
@@ -29,17 +28,9 @@ export class GameState {
       return this.questionService.getQuestion().pipe(tap((result) => {
           const state = getState();
 
-          const apiQuestion = result[0];
-          const incorrectAnswers = shuffleArray(apiQuestion.incorrectAnswers).slice(0, 3);
-
-          const question: Question = {
-            question: apiQuestion.question,
-            answers: shuffleArray([{ answer: apiQuestion.correctAnswer, isCorrent: true }, ...incorrectAnswers.map(_ => { return { answer: _, isCorrent: false} })]),
-          }
-
           setState({
               ...state,
-              question
+              question: result
           });
       }));
   }
