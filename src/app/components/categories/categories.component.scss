@@ -15,10 +15,7 @@ h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
-    @include respond-to('desktop') {
-        margin-right: -#{$spacing-l};
-    }
+    margin-right: -#{$spacing-l}; // Negate margin-right from button
 }
 
 button {
