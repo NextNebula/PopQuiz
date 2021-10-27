@@ -1,3 +1,4 @@
 <main>
-  <app-question></app-question>
+  <app-categories *ngIf="(playingState$ | async)==playingState.NewGame"></app-categories>
+  <app-question *ngIf="(playingState$ | async)==playingState.Playing"></app-question>
 </main>

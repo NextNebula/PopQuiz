@@ -1,9 +1,10 @@
 @import "../../../theme.scss";
 
-.container {
+button {
     @include theme-light;
-    margin-bottom: $spacing-l;
+    width: 100%;
     padding: $spacing-m;
+    margin-bottom: $spacing-l;
     font-size: 24px;
     text-align: center;
     border-radius: $border-radius;

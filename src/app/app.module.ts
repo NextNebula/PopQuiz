@@ -8,12 +8,14 @@ import { AnswerComponent } from './components/answer/answer.component';
 import { QuestionComponent } from './components/question/question.component';
 import { environment } from 'src/environments/environment';
 import { GameState } from './store/game.state';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnswerComponent,
-    QuestionComponent
+    QuestionComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

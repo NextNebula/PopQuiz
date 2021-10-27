@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable, Subscription } from 'rxjs';
-import { first } from 'rxjs/operators';
 import { Answer } from 'src/app/models/answer';
-import { GetNewQuestion, QuestionAnswered } from 'src/app/store/game.actions';
+import { GetNewQuestion, SetQuestionAnswered } from 'src/app/store/game.actions';
 import { GameState } from 'src/app/store/game.state';
 
 @Component({
@@ -37,7 +36,7 @@ export class AnswerComponent implements OnInit {
       return;
 
     //Set game state answered
-    this.store.dispatch(new QuestionAnswered());
+    this.store.dispatch(new SetQuestionAnswered());
 
     //Handle button styling state
     if (isCorrent) {

@@ -1,1 +1,1 @@
-<div class="container" [class.answered]="isQuestionAnswered$ | async" [class.correct]="isAnsweredCorrect" [class.wrong]="isAnsweredWrong" (click)="onClick(answer.isCorrent)">{{answer.answer}}</div>
+<button [class.answered]="isQuestionAnswered$ | async" [class.correct]="isAnsweredCorrect" [class.wrong]="isAnsweredWrong" (click)="onClick(answer.isCorrent)">{{answer.answer}}</button>
