@@ -1,6 +1,6 @@
 # Popquiz
 
-This is a example popquiz project. It lets users answers questions from a few categories. The questions are provided by an [external api](https://api.trivia.willfry.co.uk).
+This is a example popquiz project. It lets users answers questions from a few categories. The questions are provided by an [external api](https://api.trivia.willfry.co.uk). [Give it a try](https://popquiz.netlify.app).
 
 ## Development server
 
