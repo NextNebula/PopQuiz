@@ -17,9 +17,11 @@ button {
         width: 80%;
         font-size: 28px;
     }
-
-    &:hover {
-        background-color: $color-choose;
+    
+    @media (hover:hover) {
+        &:hover {
+            background-color: $color-choose;
+        }
     }
 }
 
@@ -27,8 +29,10 @@ button {
     opacity: 0.6;
 
     //Disable correct/wrong hover effect if answered
-    &:hover {
-        @include theme-light;
+    @media (hover:hover) {
+        &:hover {
+            @include theme-light;
+        }
     }
 }
 
