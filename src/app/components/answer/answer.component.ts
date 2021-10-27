@@ -16,6 +16,8 @@ export class AnswerComponent implements OnInit {
   @Input() answer!: Answer;
   @Select(GameState.getIsQuestionAnswered) isQuestionAnswered$: Observable<boolean>;
   
+  isUserAnswer: boolean = false;
+  isNotUserAnswerButCorrect: boolean = false;
   isAnsweredCorrect: boolean = false;
   isAnsweredWrong: boolean = false;
   isQuestionAnswered: boolean = false;
@@ -23,7 +25,14 @@ export class AnswerComponent implements OnInit {
   constructor(private store: Store) { }
 
   ngOnInit(): void {
-    this.isQuestionAnsweredSubscription = this.isQuestionAnswered$.subscribe(_ => this.isQuestionAnswered = _)
+    this.isQuestionAnsweredSubscription = this.isQuestionAnswered$.subscribe(value => {
+      this.isQuestionAnswered = value;
+
+      //When user has answerd set isNotUserAnswerButCorrect to show correct question
+      if (value && this.answer.isCorrent) {
+        this.isNotUserAnswerButCorrect = true;
+      }
+    })
   }
 
   ngOnDestroy(): void {
@@ -36,6 +45,7 @@ export class AnswerComponent implements OnInit {
       return;
 
     //Set game state answered
+    this.isUserAnswer = true;
     this.store.dispatch(new SetQuestionAnswered());
 
     //Handle button styling state

@@ -35,11 +35,9 @@ button {
 .correct, .correct:hover {
     background-color: $color-correct;
     color: $color-light;
-    opacity: 1;
 }
 
 .wrong, .wrong:hover {
     background-color: $color-wrong;
     color: $color-light;
-    opacity: 1;
 }
